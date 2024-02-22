@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Information</title>
+</head>
+<body>
+    <h1>Artist Information for "{{ query }}"</h1>
+    <ul>
+        {% for item in results['artists']['items'] %}
+            <li>Name: {{ item['name'] }}</li>
+            <li>Genres: {{ ', '.join(item['genres']) }}</li>
+            <li>Followers: {{ item['followers']['total'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Search</a>
+</body>
+</html>

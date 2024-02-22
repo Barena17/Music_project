@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Information</title>
+</head>
+<body>
+    <h1>Track Information for "{{ query }}"</h1>
+    <ul>
+        {% for item in results['tracks']['items'] %}
+            <li>Title: {{ item['name'] }}</li>
+            <li>Artist: {{ item['artists'][0]['name'] }}</li>
+            <li>Release Date: {{ item['album']['release_date'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Search</a>
+</body>
+</html>
